@@ -12,7 +12,7 @@ const EmployeeCard = ({ employee, setEmployees }) => {
 
   const handleDelete = async () => {
     try {
-      await api.delete(`/${employee._id}`);
+      await api.delete(`/employees/${employee._id}`);
       setEmployees(prev => prev.filter(e => e._id !== employee._id));
       toast.success("Employee deleted successfully");
     } catch {
@@ -25,7 +25,7 @@ const EmployeeCard = ({ employee, setEmployees }) => {
   const toggleStatus = async (id, currentStatus) => {
     try {
       const newStatus =currentStatus === "Active" ? "Inactive" : "Active";
-      await api.put(`/${id}`, {
+      await api.put(`/employees/${id}`, {
         empstatus: newStatus,
       });
       setEmployees(prev =>
