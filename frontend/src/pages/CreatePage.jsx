@@ -20,7 +20,7 @@ const CreatePage = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await api.post("/", {
+      await api.post("/employees", {
         employeeID,
         fullName,
         email,
