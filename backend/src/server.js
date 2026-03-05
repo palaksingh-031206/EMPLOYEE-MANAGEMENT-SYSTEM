@@ -12,6 +12,8 @@ const port=process.env.PORT || 3001;
 
 app.use (cors({
         //origin:'http://localhost:5173'
+        origin:"https://employee-management-system-1ly3.onrender.com"
+        credentials: true
     }
 ))
 
