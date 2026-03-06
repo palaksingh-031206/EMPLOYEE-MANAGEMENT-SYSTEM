@@ -186,7 +186,13 @@ export async function searchByEmployeeID(req, res) {
 
 export async function sortBySalary(req, res) {
   try {
-    const sortsal = req.query.order === "desc" ? -1 : 1;
+    const { order } = req.query;
+
+    let sortsal = 1;
+
+    if (order === "desc") {
+      sortsal = -1;
+    }
 
     const employees = await Employee.find().sort({ salary: sortsal });
 
