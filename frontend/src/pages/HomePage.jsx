@@ -80,12 +80,15 @@ const HomePage = () => {
     }
   };
 
-  const fetchEmployeesSortedBySalary = async () => {
-  console.log("Sorting order:", salaryOrder);
+  const fetchEmployeesSortedBySalary = async (order) => {
+  if (!order) {
+    toast.error("Please select sorting order");
+    return;
+  }
 
   try {
     setLoading(true);
-    const res = await api.get(`/employees/sort/salary?order=${salaryOrder}`);
+    const res = await api.get(`/employees/sort/salary?order=${order}`);
     setEmployees(res.data.data);
   } catch (error) {
     toast.error("Failed to sort employees by salary");
@@ -217,22 +220,22 @@ const HomePage = () => {
           </div>
           {/* Sort Salary */}
           <select
-            id="salaryOrder"
-            name="salaryOrder"
-            className="select select-bordered w-full h-12"
-            value={salaryOrder}
-            onChange={(e) => setSalaryOrder(e.target.value)}
-          >
+  id="salaryOrder"
+  name="salaryOrder"
+  className="select select-bordered w-full h-12"
+  value={salaryOrder}
+  onChange={(e) => {
+    const value = e.target.value;
+    setSalaryOrder(value);
+    fetchEmployeesSortedBySalary(value);
+  }}
+>
             <option value="">Sort Salary</option>
             <option value="asc">Ascending ↑</option>
             <option value="desc">Descending ↓</option>
           </select>
 
-          <button
-            onClick={() => fetchEmployeesSortedBySalary()}
-            className="btn btn-secondary h-12 w-full font-semibold"
-          >
-            Sort by Salary 💰
+          
           </button>
         </div>
 
