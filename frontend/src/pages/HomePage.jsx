@@ -81,10 +81,7 @@ const HomePage = () => {
   };
 
   const fetchEmployeesSortedBySalary = async () => {
-  if (!salaryOrder) {
-    toast.error("Please select sorting order");
-    return;
-  }
+  console.log("Sorting order:", salaryOrder);
 
   try {
     setLoading(true);
