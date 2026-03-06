@@ -31,7 +31,7 @@ const HomePage = () => {
       setLoading(true);
       let url = "/employees";
       if (department.trim()) {
-        url = `/department?department=${encodeURIComponent(department)}`;
+        url = `/employees/department?department=${encodeURIComponent(department)}`;
       }
       const res = await api.get(url);
       setEmployees(res.data.data || res.data);
@@ -69,7 +69,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const res = await api.get(
-        `employees/search?employeeID=${encodeURIComponent(employeeIDQuery)}`,
+        `/employees/search?employeeID=${encodeURIComponent(employeeIDQuery)}`,
       );
       setEmployees([res.data]);
     } catch (error) {
