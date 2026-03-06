@@ -42,7 +42,8 @@ Render (Frontend + Backend)
 📂 Project Structure
 employee-management-system
 
-```frontend
+```
+frontend
 │
 ├── src
 │   ├── components
@@ -79,7 +80,8 @@ backend
 ├── controllers
 │   └── employeeController.js
 │
-└── server.js```
+└── server.js
+```
 
 📊 Dashboard Overview
 The dashboard provides useful insights such as:
@@ -101,6 +103,7 @@ This helps administrators quickly understand workforce statistics.
 👨‍💻 Author
 Palak Singh
 GitHub: https://github.com/palaksingh-031206
+
 
 
 
