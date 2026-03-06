@@ -48,7 +48,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const res = await api.get(
-        `/department?department=${encodeURIComponent(departmentQuery)}`,
+        `/employees/department?department=${encodeURIComponent(departmentQuery)}`,
       );
       setEmployees(res.data.data);
     } catch (error) {
@@ -69,7 +69,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const res = await api.get(
-        `/search?employeeID=${encodeURIComponent(employeeIDQuery)}`,
+        `employees/search?employeeID=${encodeURIComponent(employeeIDQuery)}`,
       );
       setEmployees([res.data]);
     } catch (error) {
