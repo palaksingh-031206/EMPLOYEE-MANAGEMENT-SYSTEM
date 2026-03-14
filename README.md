@@ -11,6 +11,7 @@ The system also provides a **dashboard overview with useful statistics** such as
 * ➕ Add new employees
 * ✏️ Edit employee details
 * ❌ Delete employees
+* 🔍 View Employee details
 * 🔍 Search employees by **Employee ID**
 * 🏢 Filter employees by **Department**
 * 💰 Sort employees by **Salary**
